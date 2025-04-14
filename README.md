@@ -7,3 +7,8 @@
 ![Bild](Bildname-imgleichenOrdner.jpg)
 
 Text kommt hier hin
+
+
+|Grösse     |Einheit        |
+|-----------|---------------|
+|Wiederstand|Ohm            |
