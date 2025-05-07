@@ -5,5 +5,42 @@
 }
 
 body {
-    background-color: #4f87d1;
+    background-color: #0E0E0E;
+}
+
+.PageContainer{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+h1{
+    color: #F1F1F1;
+    font-size: 4em;
+     font-family: 'Poppins', sans-serif; 
+     text-transform: uppercase;
+ }
+
+p{
+   color: #F1F1F1;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+
+.button{
+    font-family: 'Poppins', sans-serif; 
+    color: #0E0E0E;
+    font-weight: 700; 
+    text-decoration: none;
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    margin-top: 40px;
+    border-radius: 60px;
+    transition: all 0.3s ease-in-out;
 }
