@@ -1,0 +1,9 @@
+* { /* Reset all elements, Stern heisst wird auf ganze Seite angewendet */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4f87d1;
+}
