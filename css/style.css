@@ -12,6 +12,10 @@ body {
     background-color: #0E0E0E;
 }
 
+main{
+    margin: 0% 10%;
+}
+
 
 /* Container Home Page*/
 .PageContainer{
@@ -38,8 +42,9 @@ h1{
   font-weight: 700;
   text-transform: uppercase;
   font-style: normal;
+  text-align: center;
   color: #F1F1F1;
-  font-size: 4em;
+  font-size: 2em;
 }
 
 
