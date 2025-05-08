@@ -1,13 +1,19 @@
+
+
 * { /* Reset all elements, Stern heisst wird auf ganze Seite angewendet */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 body {
     background-color: #0E0E0E;
 }
 
+
+/* Container Home Page*/
 .PageContainer{
     display: flex;
     height: 100vh;
@@ -17,26 +23,43 @@ body {
     align-content: center;
 }
 
+/* Container Quiz Page*/
+
+
+
+/* Schrift */
+/* <weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 h1{
-    color: #F1F1F1;
-    font-size: 4em;
-     font-family: 'Poppins', sans-serif; 
-     text-transform: uppercase;
- }
-
-p{
-   color: #F1F1F1;
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 300;
-    margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #F1F1F1;
+  font-size: 4em;
 }
 
 
+p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #F1F1F1;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Button */
 .button{
-    font-family: 'Poppins', sans-serif; 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
     color: #0E0E0E;
-    font-weight: 700; 
+    font-weight: 700;
+    font-size: 1em; 
     text-decoration: none;
     background-color: #F1F1F1;
     padding: 10px 20px;
@@ -44,3 +67,7 @@ p{
     border-radius: 60px;
     transition: all 0.3s ease-in-out;
 }
+
+
+
+/* Desktop - Media Querys*/
