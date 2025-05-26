@@ -16,6 +16,9 @@ main{
     margin: 35px 35px 25px 35px;
 }
 
+section.titledesktop{
+    display: none;
+}
 
 /* Container Home Page*/
 .PageContainer{
@@ -46,7 +49,7 @@ main{
 
 img{
     width: 100%;
-    height:50vh;
+    height:45vh;
     object-fit: cover;
     border-radius: 16px;
     margin-bottom: 15px;
@@ -65,11 +68,15 @@ img{
     flex-direction: column;
     align-items: center;
     margin-top: 2%;
+    margin-bottom: 2%;
     justify-content: space-around;
 
 }
 
 .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     color: #0E0E0E;
@@ -78,9 +85,11 @@ img{
     text-decoration: none;
     font-style: normal;
     text-align: center;
+
     background-color: #F1F1F1;
     width: 100%;
-    padding: 7% 0;
+    height: 30%;
+    /* padding: 7% 0; */
     border-radius: 60px;
     transition: all 0.3s ease-in-out;
 }
@@ -131,4 +140,61 @@ p{
 
 
 
-/* Desktop - Media Querys*/
+/* Desktop - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
+@media screen and (min-width: 900px) {
+
+section.titlemobile{
+    display: none;
+}
+
+section.titledesktop{
+    display:block;
+}
+
+
+
+
+/* main{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:0;
+}
+
+section.title{
+    margin-top: 12%;
+    margin-right: 5%;
+    margin-left: -5%;
+}
+
+h1{
+    font-size: 3em;
+    text-align: left;
+}
+
+.taglist{
+    justify-content: left;
+    margin-left: 0%;
+}
+
+section.description{
+    margin-right: 5%;
+    margin-left: -5%;
+}
+
+.interactionlist{
+    margin-top: 4%;
+    margin-right:5%;
+    margin-left: -5%;
+}
+
+img{
+    order:-1;
+    height: 100vh;
+    width: 50%;
+    margin:0;
+    border-radius: 0;
+} */
+
+}
