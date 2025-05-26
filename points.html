@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
+    <title>Punkte</title>
+</head>
+
+<body>
+    <script type="module" src="js/points.js">
+    </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->
+        
+    <main class="points">
+        <h1>Maybe next time </h1>
+           <div class="circle-container">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                </svg>
+                <div class="number" id="number">+0</div>
+            </div>
+    </main>
+</body>
+</html>
