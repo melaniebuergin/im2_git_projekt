@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     background-color: #0E0E0E;
 }
@@ -14,13 +15,8 @@ main{
     margin: 35px 35px 25px 35px;
 }
 
-section.titledesktop{
-    display: none;
-}
 
-
-
-/* Container Home Page*/
+/* Style Mobile Container Home Page*/
 .PageContainer{
     display: flex;
     height: 100vh;
@@ -30,7 +26,7 @@ section.titledesktop{
     align-content: center;
 }
 
-/* Container Quiz Page*/
+/* Style Mobile Container Quiz Page*/
 .taglist{
     display: flex;
     flex-direction: row;
@@ -38,6 +34,10 @@ section.titledesktop{
     justify-content: center;
     align-items: center;
     margin: 20px 0px 12px 0px;
+}
+
+section.titledesktop{
+    display: none;
 }
 
 .tag{
@@ -114,6 +114,59 @@ img{
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
+/* Style Mobile points*/
+main.points{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+svg {
+  transform: rotate(-90deg); /* Start oben */
+}
+
+circle {
+  fill: none;
+  stroke-width: 4;
+  r: 50;
+  cx: 60;
+  cy: 60;
+}
+
+.progress {
+  stroke: #4caf50;
+  stroke-dasharray: 314;       /* 2πr ≈ 314 */
+  stroke-dashoffset: 314;      /* Start bei 0% */
+  animation: fill 2s ease forwards;
+}
+
+@keyframes fill {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+    transform: translate(-50%, -50%);
+    color: #26B439;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
 /* Schrift Style Mobile */
 h1{
   font-family: "Inter", sans-serif;
@@ -153,7 +206,7 @@ p{
 
 
 
-/* Desktop - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
+/* Desktop Quiz - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
 @media screen and (min-width: 900px) {
 
 
