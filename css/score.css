@@ -1,3 +1,9 @@
+* { /* Reset all elements, Stern heisst wird auf ganze Seite angewendet */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: black;
 }
@@ -61,22 +67,16 @@ p{
 main.score{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
-}
-
-main.score h1{
-    margin-bottom: 10%;
-}
-
-.resulttext{
-    margin-bottom: 40%;
+    padding: 10% 20%;
 }
 
 img{
-    height: 20vh;
+    height: 25vh;
 }
 
-a.buttonStandart{
-    margin-top: 50%;
+section.resulttext h1{
+    padding: 5%;
 }
