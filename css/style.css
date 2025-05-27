@@ -1,3 +1,5 @@
+/* Schrift  <weight>: value 100 bis 900*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
 * { /* Reset all elements, Stern heisst wird auf ganze Seite angewendet */
@@ -5,6 +7,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Schrift Style Mobile */
+h1{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  color: #F1F1F1;
+  font-size: 27px;
+}
+
+p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #F1F1F1;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+}
+
 
 
 body {
@@ -209,31 +233,6 @@ a.buttonStandard {
 
 
 
-/* Schrift */
-/* <weight>: value 100 bis 900*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-/* Schrift Style Mobile */
-h1{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-style: normal;
-  text-align: center;
-  color: #F1F1F1;
-  font-size: 27px;
-}
-
-
-p{
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #F1F1F1;
-    font-weight: 400;
-    font-size: 12px;
-    text-align: center;
-}
 
 /* Button */
 .buttonStandard{
@@ -320,5 +319,16 @@ section.right h1{
     color: #000000;
     cursor: pointer;
 }
+
+}
+
+
+/* Desktop Home/index - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
+@media screen and (min-width: 900px) {
+
+    .startscreen{        
+    align-items: center;
+    justify-content: center;
+    } 
 
 }

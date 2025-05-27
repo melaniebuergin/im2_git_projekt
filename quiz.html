@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
-    <title>Vorlage - HIER TITEL ANPASSEN</title>
+    <title>Quiz</title>
 </head>
 <body>
     <main>
@@ -29,7 +29,7 @@
         
          
         <div class="img-container">
-            <img class="sharp-edges" src="img/testbild.jpg" alt="sharp edges show image">
+            <img class="sharp-edges" id="show-image" src="img/testbild.jpg" alt="sharp edges show image">
         </div>
         
         <section class="right">
@@ -37,25 +37,25 @@
                 <h1>Guess the show</h1>
                 <section class = taglistdesktop>
                         <div class="tag">
-                            <p>Network</p>
+                            <p id="tag1">tag1</p>
                         </div>
                         <div class="tag">
-                            <p>Time</p>
+                            <p id="tag2">tag2</p>
                         </div>
                         <div class="tag">
-                            <p>Type</p>
+                            <p id="tag3">tag3</p>
                         </div>
                 </section>
             </section> 
            
-            <section class="description">
+            <section class="description" id="genres">
                 <p>Genre: Drama | Action | Crime</p>
             </section>
 
-            <section class = interactionlist>
-                <a href="quiz.html" class="button">Option 1</a>
+            <section class = "interactionlist" id="answer-buttons">
+                <!-- <a href="quiz.html" class="button">Option 1</a>
                 <a href="quiz.html" class="button">Option 2</a>
-                <a href="quiz.html" class="button">Option 3</a>
+                <a href="quiz.html" class="button">Option 3</a> Buttons werden per Java Script eingefügt-->
             </section>
         </section> 
          
