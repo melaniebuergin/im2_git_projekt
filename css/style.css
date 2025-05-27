@@ -47,14 +47,32 @@ section.titledesktop{
     margin: 5px;
 }
 
-img{
+img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45vh;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.img-container img{
     width: 100%;
     height:45vh;
     object-fit: cover;
     border-radius: 16px;
     margin-bottom: 15px;
-    /* filter: blur(5px); */
+   filter: blur(5px);
 }
+
+/* Das Bild darüber zeigt nur die Ränder */
+img.sharp-edges {
+  mask-image: radial-gradient(circle, transparent 55%, black 100%);
+  -webkit-mask-image: radial-gradient(circle, transparent 0%, black 0%);
+  pointer-events: none;
+}
+
 
 .description{
     display: flex;
@@ -253,11 +271,22 @@ main{
     margin:0;
 }
 
-img{
-    width: 50%;
+.img-container{
+    /* background-color: #26B439; */
+    width: 60%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 0;
+    margin:0;
 }
 
 section.right{
