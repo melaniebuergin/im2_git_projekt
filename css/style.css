@@ -115,57 +115,73 @@ img{
 
 
 /* Style Mobile points*/
-main.points{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+
+main.points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
 }
 
 .circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
   position: relative;
-  width: 120px;
-  height: 120px;
+  margin-bottom: 30px;
 }
 
 svg {
-  transform: rotate(-90deg); /* Start oben */
+  transform: rotate(-90deg);
 }
 
 circle {
   fill: none;
-  stroke-width: 4;
-  r: 50;
-  cx: 60;
-  cy: 60;
-}
-
-.progress {
   stroke: #4caf50;
-  stroke-dasharray: 314;       /* 2πr ≈ 314 */
-  stroke-dashoffset: 314;      /* Start bei 0% */
-  animation: fill 2s ease forwards;
+  stroke-width: 4;
+  stroke-dasharray: 565.5;
+  stroke-dashoffset: 565.5;
+  animation: fill-quarter 1s ease forwards;
 }
 
-@keyframes fill {
+@keyframes fill-quarter {
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 0; /* ca. 1/4 des Umfangs sichtbar */
   }
 }
 
 .number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-    transform: translate(-50%, -50%);
-    color: #26B439;
-    font-family: Inter;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  color: #26B439;
+  font-size: 48px;
+  font-weight: bold;
+
 }
+
+.points p {
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+a.buttonStandard {
+  margin-top: 50px;
+  padding: 12px 24px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+
+
+
 
 /* Schrift Style Mobile */
 h1{
