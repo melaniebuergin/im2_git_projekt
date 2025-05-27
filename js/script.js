@@ -36,8 +36,63 @@ async function main() {
     }
 
     console.log(all_showTitles_with_details); // Test-Ausgabe
+
+    startQuiz(); // Quiz starten, sobald alles geladen ist
 }
 
 main(); // Funktion aufrufen
 
 
+
+
+
+
+
+function startQuiz() {
+    loadNewQuestion(); // erste Frage laden
+}
+
+
+function getRandomShow(excludeName) {
+    let filtered = all_showTitles_with_details.filter(show => show.name !== excludeName);
+    return filtered[Math.floor(Math.random() * filtered.length)];
+}
+
+function loadNewQuestion() {
+    const show = all_showTitles_with_details[Math.floor(Math.random() * all_showTitles_with_details.length)];
+    const correctName = show.name;
+
+    // HTML Elemente auswählen
+    const img = document.getElementById('show-image');
+    const tag1 = document.getElementById('tag1');
+    const tag2 = document.getElementById('tag2');
+    const tag3 = document.getElementById('tag3');
+    const buttons = document.querySelectorAll('.choice-btn');
+
+    // Bild setzen
+    img.src = show.image;
+    img.alt = show.name;
+
+    // Tags setzen
+    tag1.textContent = show.webChannel !== '—' ? show.webChannel : show.network;
+    tag2.textContent = `${show.premiered} - ${show.ended}`;
+    tag3.textContent = show.type;
+
+    // Antwortoptionen vorbereiten
+    const wrong1 = getRandomShow(correctName);
+    const wrong2 = getRandomShow(correctName === wrong1.name ? '' : correctName);
+    const options = [correctName, wrong1.name, wrong2.name].sort(() => Math.random() - 0.5);
+
+    // Buttons befüllen
+    buttons.forEach((btn, idx) => {
+        btn.textContent = options[idx];
+        btn.onclick = () => {
+            if (btn.textContent === correctName) {
+                alert('✅ Richtig!');
+            } else {
+                alert(`❌ Falsch! Die richtige Antwort war: ${correctName}`);
+            }
+            loadNewQuestion(); // Nächste Frage
+        };
+    });
+}
