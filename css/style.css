@@ -87,7 +87,7 @@ img-container{
     object-fit: cover;
     border-radius: 16px;
     margin-bottom: 15px;
-   filter: blur(5px);
+   filter: blur(40px);
 }
 
 /* Das Bild darüber zeigt nur die Ränder */
@@ -102,6 +102,13 @@ img.sharp-edges {
     display: flex;
     flex-direction: row;
     justify-content: left;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #F1F1F1;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
 }
 
 .interactionlist{
@@ -135,20 +142,86 @@ img.sharp-edges {
     transition: all 0.3s ease-in-out;
 }
 
+.quiz-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #0E0E0E;
+    font-weight: 700;
+    font-size: 14px; 
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+
+    background-color: #F1F1F1;
+    width: 100%;
+    height: 30%;
+    border-radius: 60px;
+    transition: all 0.3s ease-in-out;
+}
+
 /* Quiz Standardfarben Button Zustände*/
 .correct {
-  background-color:rgba(38, 180, 57, 1); /* grün */
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 14px; 
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+    
+    background-color: #4caf50; /* Grün */
+    color: white;
+    width: 100%;
+    height: 30%;
+    border-radius: 60px;
 }
 
 .wrong {
-  background-color:rgba(180, 38, 38, 1); /* rot */
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 14px; 
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+    
+    background-color: #f44336; /* Rot */
+    color: white;
+
+    width: 100%;
+    height: 30%;
+    border-radius: 60px;
 }
 
-.neutral {
-  background-color: rgba(112, 112, 112, 1); /* grau */
-  color: rgb(0, 0, 0);
+.disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 14px; 
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+
+    background-color: #707070; /* Grau */
+    color: #000000;
+    pointer-events: none;
+    opacity: 0.7;
+
+    width: 100%;
+    height: 30%;
+    border-radius: 60px;
 }
 
 
@@ -272,7 +345,7 @@ main{
 
 .img-container{
     /* background-color: #26B439; */
-    width: 60%;
+    width: 45%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -293,6 +366,7 @@ section.right{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 5%;
 }
 
 section.right h1{
@@ -308,6 +382,7 @@ section.right h1{
 
 .description{
     margin-left:2%;
+   
 }
 
 .interactionlist{

@@ -65,9 +65,9 @@ function loadRandomShow() {
     document.getElementById("genres").textContent = "Genres: " + correctShow.genres;
 
     // Tags einfügen
-    document.getElementById("tag1").textContent = tag1;
-    document.getElementById("tag2").textContent = tag2;
-    document.getElementById("tag3").textContent = tag3;
+    document.querySelectorAll(".tag1").forEach(el => el.textContent = tag1);
+    document.querySelectorAll(".tag2").forEach(el => el.textContent = tag2);
+    document.querySelectorAll(".tag3").forEach(el => el.textContent = tag3);
 
     // Antwortbuttons erstellen
     const answersContainer = document.getElementById("answer-buttons");
@@ -82,16 +82,24 @@ function loadRandomShow() {
     allOptions.forEach(option => {
         const btn = document.createElement("button");
         btn.textContent = option;
-        btn.classList.add("button");
-        btn.onclick = () => {
-            if (option === correctShow.name) {
-                alert("Richtig!");
-                // Optional: Neue Frage laden
-                // loadRandomShow();
-            } else {
-                alert("Falsch!");
-            }
-        };
+        btn.classList.add("quiz-button");
+
+        btn.addEventListener("click", () => {
+            const allButtons = document.querySelectorAll("#answer-buttons button");
+
+            allButtons.forEach(button => {
+                button.disabled = true; // HTML deaktivieren
+
+                if (button.textContent === correctShow.name) {
+                    button.classList.add("correct");
+                } else if (button === btn) {
+                    button.classList.add("wrong");
+                } else {
+                    button.classList.add("disabled");
+                }
+            });
+        });
+
         answersContainer.appendChild(btn);
     });
 }
