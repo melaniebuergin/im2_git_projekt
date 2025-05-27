@@ -44,6 +44,7 @@ main(); // Funktion aufrufen
 
 // Funktion zum Anzeigen des Quiz
 function loadRandomShow() {
+    document.querySelector(".sharp-edges").classList.remove("unblur");
     const randomIndex = Math.floor(Math.random() * all_showTitles_with_details.length);
     const correctShow = all_showTitles_with_details[randomIndex];
 
@@ -98,6 +99,27 @@ function loadRandomShow() {
                     button.classList.add("disabled");
                 }
             });
+
+            // Bild entbluren
+            document.querySelector(".sharp-edges").classList.add("unblur");
+
+            // Mobile vs. Desktop unterscheiden
+            if (window.innerWidth <= 768) {
+                document.getElementById("mobile-overlay").classList.remove("hide");
+
+                // Overlay klick -> nächste Frage laden
+                document.getElementById("mobile-overlay").onclick = () => {
+                    document.getElementById("mobile-overlay").classList.add("hide");
+                    loadRandomShow(); // nächste Frage
+                };
+            } else {
+                document.getElementById("continue-button").classList.remove("hide");
+
+                document.getElementById("continue-button").onclick = () => {
+                    document.getElementById("continue-button").classList.add("hide");
+                    loadRandomShow(); // nächste Frage
+                };
+            }
         });
 
         answersContainer.appendChild(btn);

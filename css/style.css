@@ -1,11 +1,18 @@
 /* Schrift  <weight>: value 100 bis 900*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
 * { /* Reset all elements, Stern heisst wird auf ganze Seite angewendet */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #0E0E0E;
+}
+
+main{
+    margin: 35px 35px 25px 35px;
 }
 
 /* Schrift Style Mobile */
@@ -29,18 +36,33 @@ p{
     text-align: center;
 }
 
-
-
-body {
-    background-color: #0E0E0E;
+/* Button */
+a.buttonStandard {
+  margin-top: 50px;
+  padding: 12px 24px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-main{
-    margin: 35px 35px 25px 35px;
+.buttonStandard{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #0E0E0E;
+    font-weight: 700;
+    font-size: 1em; 
+    text-decoration: none;
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    margin-top: 40px;
+    border-radius: 60px;
+    transition: all 0.3s ease-in-out;
 }
 
 
-/* Style Mobile Container Home Page*/
+/* ------- Style Mobile Container Home Page ------- */
 .PageContainer{
     display: flex;
     height: 100vh;
@@ -50,7 +72,8 @@ main{
     align-content: center;
 }
 
-/* Style Mobile Container Quiz Page*/
+
+/* ------- Style Mobile Container Quiz Page ------- */
 .taglist{
     display: flex;
     flex-direction: row;
@@ -90,6 +113,12 @@ img-container{
    filter: blur(40px);
 }
 
+/* Zustand nach Auswahl: Bild ohne Blur */
+.sharp-edges.unblur {
+  filter: none;
+}
+
+
 /* Das Bild darüber zeigt nur die Ränder */
 img.sharp-edges {
   mask-image: radial-gradient(circle, transparent 55%, black 100%);
@@ -119,27 +148,6 @@ img.sharp-edges {
     margin-top: 2%;
     margin-bottom: 2%;
     justify-content: space-around;
-
-}
-
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #0E0E0E;
-    font-weight: 700;
-    font-size: 14px; 
-    text-decoration: none;
-    font-style: normal;
-    text-align: center;
-
-    background-color: #F1F1F1;
-    width: 100%;
-    height: 30%;
-    border-radius: 60px;
-    transition: all 0.3s ease-in-out;
 }
 
 .quiz-button{
@@ -225,7 +233,38 @@ img.sharp-edges {
 }
 
 
-/* Style Mobile points*/
+/* Mobile Overlay */
+.hide {
+  display: none !important;
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mobile-overlay .circle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+
+
+/* ------- Style Mobile points --------*/
 
 main.points {
   display: flex;
@@ -286,7 +325,6 @@ circle {
     font-style: normal;
     text-align: center;
     font-size: 50px;
-
 }
 
 .points p {
@@ -294,37 +332,10 @@ circle {
   font-size: 16px;
 }
 
-a.buttonStandard {
-  margin-top: 50px;
-  padding: 12px 24px;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-}
 
 
 
-
-/* Button */
-.buttonStandard{
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #0E0E0E;
-    font-weight: 700;
-    font-size: 1em; 
-    text-decoration: none;
-    background-color: #F1F1F1;
-    padding: 10px 20px;
-    margin-top: 40px;
-    border-radius: 60px;
-    transition: all 0.3s ease-in-out;
-}
-
-
-
-/* Desktop Quiz - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
+/* ------- Desktop Quiz - Media Querys - Diese CSS-Regeln gelten nur auf Desktops -------  */
 @media screen and (min-width: 900px) {
 
 
@@ -407,3 +418,25 @@ section.right h1{
     } 
 
 }
+
+
+/* ------ Stuff wo mer ni wüsse ob mers no bruche -------*/
+/* .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #0E0E0E;
+    font-weight: 700;
+    font-size: 14px; 
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+
+    background-color: #F1F1F1;
+    width: 100%;
+    height: 30%;
+    border-radius: 60px;
+    transition: all 0.3s ease-in-out;
+} */
