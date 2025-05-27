@@ -109,10 +109,6 @@ img{
   color: rgb(0, 0, 0);
 }
 
-/* Schrift */
-/* <weight>: value 100 bis 900*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 
 /* Style Mobile points*/
 
@@ -130,16 +126,20 @@ h1 {
 }
 
 .circle-container {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
+  flex-direction:column; */
   position: relative;
+  width: 200px;
+    height: 200px;
   margin-bottom: 30px;
 }
 
 svg {
-  transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
 }
 
 circle {
@@ -158,9 +158,19 @@ circle {
 }
 
 .number {
-  color: #26B439;
-  font-size: 48px;
-  font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: #26B439;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: normal;
+    text-align: center;
+    font-size: 50px;
 
 }
 
@@ -181,7 +191,9 @@ a.buttonStandard {
 
 
 
-
+/* Schrift */
+/* <weight>: value 100 bis 900*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* Schrift Style Mobile */
 h1{
