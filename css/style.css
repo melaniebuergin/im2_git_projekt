@@ -296,6 +296,7 @@ svg {
     height: 100%;
 }
 
+/*Grüner Kreis = Standart  für richtig*/
 circle {
   fill: none;
   stroke: #4caf50;
@@ -303,6 +304,10 @@ circle {
   stroke-dasharray: 565.5;
   stroke-dashoffset: 565.5;
   animation: fill-quarter 1s ease forwards;
+}
+
+.red{
+    stroke: #f44336;
 }
 
 @keyframes fill-quarter {
@@ -327,12 +332,15 @@ circle {
     font-size: 50px;
 }
 
+
 .points p {
   margin-top: 40px;
   font-size: 16px;
 }
 
-
+.false {
+    color: #f44336;
+}
 
 
 /* ------- Desktop Quiz - Media Querys - Diese CSS-Regeln gelten nur auf Desktops -------  */

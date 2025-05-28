@@ -3,9 +3,8 @@ import { showTitles } from './showTitles.js';
 
 console.log(showTitles); // Zum Testen
 
-
-
 const all_showTitles_with_details = [];
+
 
 async function loadShowDetails(title) {
     const url = `https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(title)}`;
@@ -42,39 +41,42 @@ async function main() {
 
 main(); // Funktion aufrufen
 
+
+
+// Initialisiere Punktestand und Fragezähler in localStorage
+let currentRound = parseInt(localStorage.getItem("quizRound")) || 1;
+localStorage.setItem("quizRound", currentRound); // Falls noch nicht gesetzt
+
 // Funktion zum Anzeigen des Quiz
+
 function loadRandomShow() {
     document.querySelector(".sharp-edges").classList.remove("unblur");
+
     const randomIndex = Math.floor(Math.random() * all_showTitles_with_details.length);
     const correctShow = all_showTitles_with_details[randomIndex];
 
-    // Tag 1: Netzwerk oder WebChannel prüfen
+    // Tags vorbereiten
     const tag1 = correctShow.webChannel !== '—' ? correctShow.webChannel : correctShow.network;
-
-    // Tag 2: Jahr(e)
     const premieredYear = new Date(correctShow.premiered).getFullYear();
     const endedYear = correctShow.ended !== "Läuft noch" && correctShow.ended !== "—"
         ? new Date(correctShow.ended).getFullYear()
         : "now";
     const tag2 = `${premieredYear} - ${endedYear}`;
-
-    // Tag 3: Typ
     const tag3 = correctShow.type;
 
-    // Bild und Genres setzen
+    // Bild + Genres
     document.getElementById("show-image").src = correctShow.image;
     document.getElementById("genres").textContent = "Genres: " + correctShow.genres;
 
-    // Tags einfügen
+    // Tags auf beiden Versionen setzen
     document.querySelectorAll(".tag1").forEach(el => el.textContent = tag1);
     document.querySelectorAll(".tag2").forEach(el => el.textContent = tag2);
     document.querySelectorAll(".tag3").forEach(el => el.textContent = tag3);
 
-    // Antwortbuttons erstellen
+    // Antworten-Container leeren
     const answersContainer = document.getElementById("answer-buttons");
-    answersContainer.innerHTML = ""; // vorherige löschen
+    answersContainer.innerHTML = "";
 
-    // Titel mischen
     const allTitles = all_showTitles_with_details.map(show => show.name);
     const wrongTitles = allTitles.filter(title => title !== correctShow.name);
     const randomWrong = wrongTitles.sort(() => 0.5 - Math.random()).slice(0, 2);
@@ -89,7 +91,7 @@ function loadRandomShow() {
             const allButtons = document.querySelectorAll("#answer-buttons button");
 
             allButtons.forEach(button => {
-                button.disabled = true; // HTML deaktivieren
+                button.disabled = true;
 
                 if (button.textContent === correctShow.name) {
                     button.classList.add("correct");
@@ -100,24 +102,33 @@ function loadRandomShow() {
                 }
             });
 
+            // Punkteberechnung
+            const isCorrect = btn.textContent === correctShow.name;
+            let score = parseInt(localStorage.getItem("score")) || 0;
+            let questionCount = parseInt(localStorage.getItem("questionCount")) || 0;
+
+            if (isCorrect) score += 10;
+            questionCount++;
+
+            localStorage.setItem("score", score);
+            localStorage.setItem("questionCount", questionCount);
+            localStorage.setItem("lastCorrect", isCorrect); // für points.html merken
+
             // Bild entbluren
             document.querySelector(".sharp-edges").classList.add("unblur");
 
-            // Mobile vs. Desktop unterscheiden
+            // Weiterleitung – mobile oder desktop
             if (window.innerWidth <= 768) {
                 document.getElementById("mobile-overlay").classList.remove("hide");
-
-                // Overlay klick -> nächste Frage laden
                 document.getElementById("mobile-overlay").onclick = () => {
                     document.getElementById("mobile-overlay").classList.add("hide");
-                    loadRandomShow(); // nächste Frage
+                    window.location.href = "points.html";
                 };
             } else {
                 document.getElementById("continue-button").classList.remove("hide");
-
                 document.getElementById("continue-button").onclick = () => {
                     document.getElementById("continue-button").classList.add("hide");
-                    loadRandomShow(); // nächste Frage
+                    window.location.href = "points.html";
                 };
             }
         });
@@ -125,4 +136,5 @@ function loadRandomShow() {
         answersContainer.appendChild(btn);
     });
 }
+
 

@@ -21,7 +21,10 @@
         <a href="quiz.html" class="buttonStandard">Try again</a>
                 
     </main>
-    
+    <script> // Punkte zurücksetzen nach dem Quiz
+        localStorage.removeItem("score");
+        localStorage.removeItem("questionCount");
+    </script>
     
 </body>
 </html>

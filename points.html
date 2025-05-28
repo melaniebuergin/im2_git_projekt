@@ -12,15 +12,15 @@
     </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->
         
     <main class="points">
-        <h1>Maybe next time </h1>
+        <h1 id="points-heading"></h1>
            <div class="circle-container">
-                <svg class="progress-ring" width="200" height="200">
+                <svg width="200" height="200">
                     <circle class="progress" cx="100" cy="100" r="90" />
                 </svg>
                 <div class="number" id="number">+0</div>
             </div>
-        <p>Your current score: 10</p>
-        <a href="score.html" class="buttonStandard">See Results</a>
+        <p class="current-score">Your current score: </p>
+        <a href="score.html" class="buttonStandard">Next Quiz</a>
     </main>
 </body>
 </html>
