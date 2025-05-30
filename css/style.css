@@ -8,11 +8,20 @@
 }
 
 body {
-    background-color: #0E0E0E;
+    background-color: var(--secondary-color); /* Schwarz */
 }
 
 main{
     margin: 35px 35px 25px 35px;
+}
+
+/* Farben */
+:root {
+    --primary-color: #F1F1F1; /* Weiß */
+    --secondary-color: #0E0E0E; /* Schwarz */
+    --accent-color: #26B439; /* Grün */
+    --error-color: #f44336; /* Rot */
+    --disabled-color: #707070; /* Grau */
 }
 
 /* Schrift Style Mobile */
@@ -20,58 +29,64 @@ h1{
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  text-transform: uppercase;
-  font-style: normal;
-  text-align: center;
-  color: #F1F1F1;
   font-size: 27px;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+h2{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--primary-color);
 }
 
 p{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: #F1F1F1;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
+    color:var(--primary-color);
 }
 
-/* Button */
-a.buttonStandard {
-  margin-top: 50px;
-  padding: 12px 24px;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.buttonStandard{
+span{
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #0E0E0E;
-    font-weight: 700;
-    font-size: 1em; 
-    text-decoration: none;
-    background-color: #F1F1F1;
-    padding: 10px 20px;
-    margin-top: 40px;
-    border-radius: 60px;
-    transition: all 0.3s ease-in-out;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--primary-color);
 }
 
+/* Button Mobile*/
+ a.buttonStandard {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center;  
+    text-decoration: none;
+    margin-top: 50px;
+    padding: 12px 24px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+} 
 
 /* ------- Style Mobile Container Home Page ------- */
 .PageContainer{
-    display: flex;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     align-content: center;
 }
-
 
 /* ------- Style Mobile Container Quiz Page ------- */
 .taglist{
@@ -88,9 +103,9 @@ section.titledesktop{
 }
 
 .tag{
-    border: 1px solid #F1F1F1; 
+    border: 1px solid var(--primary-color); 
     border-radius:20px;
-    padding: 8px 25px;
+    padding: 8px 15px;
     margin: 5px;
 }
 
@@ -126,15 +141,13 @@ img.sharp-edges {
   pointer-events: none;
 }
 
-
 .description{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    color: white;
+    color: var(--primary-color);
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: #F1F1F1;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
@@ -150,20 +163,22 @@ img.sharp-edges {
     justify-content: space-around;
 }
 
+/* Quiz Button vor der Auswahl*/
 .quiz-button{
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: #0E0E0E;
+    color: var(--secondary-color);;
     font-weight: 700;
     font-size: 14px; 
     text-decoration: none;
     font-style: normal;
     text-align: center;
 
-    background-color: #F1F1F1;
+    background-color: var(--primary-color);
+    border:0px;
     width: 100%;
     height: 30%;
     border-radius: 60px;
@@ -183,8 +198,8 @@ img.sharp-edges {
     font-style: normal;
     text-align: center;
     
-    background-color: #4caf50; /* Grün */
-    color: white;
+    background-color: var(--accent-color); /* Grün */
+    color: var(--primary-color);
     width: 100%;
     height: 30%;
     border-radius: 60px;
@@ -202,8 +217,8 @@ img.sharp-edges {
     font-style: normal;
     text-align: center;
     
-    background-color: #f44336; /* Rot */
-    color: white;
+    background-color: var(--error-color); /* Rot */
+    color:var(--primary-color);
 
     width: 100%;
     height: 30%;
@@ -222,8 +237,8 @@ img.sharp-edges {
     font-style: normal;
     text-align: center;
 
-    background-color: #707070; /* Grau */
-    color: #000000;
+    background-color: var(--disabled-color); /* Grau */
+    color: var(--secondary-color);;
     pointer-events: none;
     opacity: 0.7;
 
@@ -242,27 +257,25 @@ img.sharp-edges {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  background-color: rgba(14, 14, 14, 0.5);
+  color: var(--primary-color);
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 10;
 }
 
 .mobile-overlay .circle {
   width: 80px;
   height: 80px;
-  border: 2px solid white;
+  border: 2px solid var(--primary-color);
   border-radius: 50%;
   margin-bottom: 20px;
 }
-
-
 
 /* ------- Style Mobile points --------*/
 
@@ -273,21 +286,19 @@ main.points {
   justify-content: center;
   height: 100vh;
   text-align: center;
+  margin:0;
+  padding: 10% 10%;
 }
 
-h1 {
-  margin-bottom: 40px;
+.points h1 {
+  margin-bottom: 50px;
 }
 
 .circle-container {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction:column; */
-  position: relative;
-  width: 200px;
+    position: relative;
+    width: 200px;
     height: 200px;
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 svg {
@@ -296,10 +307,10 @@ svg {
     height: 100%;
 }
 
-/*Grüner Kreis = Standart  für richtig*/
+/*Grüner Kreis = Standart für richtig*/
 circle {
   fill: none;
-  stroke: #4caf50;
+  stroke: var(--accent-color);
   stroke-width: 4;
   stroke-dasharray: 565.5;
   stroke-dashoffset: 565.5;
@@ -307,7 +318,7 @@ circle {
 }
 
 .red{
-    stroke: #f44336;
+    stroke: var(--error-color);
 }
 
 @keyframes fill-quarter {
@@ -321,7 +332,7 @@ circle {
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
-    color: #26B439;
+    color: var(--accent-color);
 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -332,119 +343,147 @@ circle {
     font-size: 50px;
 }
 
-
 .points p {
   margin-top: 40px;
   font-size: 16px;
 }
 
 .false {
-    color: #f44336;
+    color: var(--error-color);
 }
+/*  ------- Style Score page  ------- */
 
-
-/* ------- Desktop Quiz - Media Querys - Diese CSS-Regeln gelten nur auf Desktops -------  */
-@media screen and (min-width: 900px) {
-
-
-section.titlemobile{
-    display: none;
-}
-
-section.titledesktop{
-    display:block;
-}
-
-main{
-    display: flex;
-    flex-direction: row;
-    gap:5%;
-    margin:0;
-}
-
-.img-container{
-    /* background-color: #26B439; */
-    width: 45%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.img-container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-    margin:0;
-}
-
-section.right{
-    width: 40%;
+main.score{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-right: 5%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 10% 10%;
+    margin:0
 }
 
-section.right h1{
-    font-size: 4em;
-    text-align: left;
+.score img{
+    height: 25vh;
+    margin-bottom: 5%;
 }
 
-.taglistdesktop{
-    margin: 3% 0%;
-    display:flex;
-    flex-direction: row;
-}
-
-.description{
-    margin-left:2%;
-   
-}
-
-.interactionlist{
-    margin-top:10%;
-}
-
-.button:hover{
-    background-color: rgb(213, 213, 213);
-    color: #000000;
-    cursor: pointer;
-}
-
+section.resulttext h1{
+    margin-bottom: 5%;
 }
 
 
-/* Desktop Home/index - Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
+
+/* Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
 @media screen and (min-width: 900px) {
 
-    .startscreen{        
-    align-items: center;
-    justify-content: center;
-    } 
+    /* ------ Desktop Schriften ------  */
+    h1{
+    font-size: 3em;
+    }
 
+    h2{
+        font-size: 1.5em;
+    }
+
+    p{
+        font-size: 1em;
+    }
+
+    /* ------ Desktop Home/index ------  */
+    .startscreen{        
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ------ Desktop Quiz ------- */
+    section.titlemobile{
+        display: none;
+    }
+
+    section.titledesktop{
+        display:block;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+        gap:5%;
+        margin:0;
+    }
+
+    .img-container{
+        /* background-color: #26B439; */
+        width: 45%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .img-container img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        margin:0;
+    }
+
+    section.right{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 5%;
+    }
+
+    section.right h1{
+        text-align: left;
+        font-size: 4em;
+    }
+
+    .taglistdesktop{
+        margin: 3% 0%;
+        display:flex;
+        flex-direction: row;
+    }
+
+    .description{
+        margin-left:2%;
+        font-size: 1em;
+    }
+
+    .interactionlist{
+        margin-top:10%;
+    }
+
+    .button:hover{
+        background-color: var(--primary-color);;
+        color: var(--secondary-color);;
+        cursor: pointer;
+    }
+
+    a.buttonStandard{
+        margin-top: 2%;
+        height: 7%;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+    }
+
+     /* ------ Desktop points ------  */
+     main.points{
+        padding: 5% 10%;
+    }
+
+    /* ------ Desktop score ------ */
+    main.score{
+        padding: 5% 10%;
+    }
+
+    section.resulttext{
+        width: 50%;
+    }
 }
 
-
-/* ------ Stuff wo mer ni wüsse ob mers no bruche -------*/
-/* .button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    color: #0E0E0E;
-    font-weight: 700;
-    font-size: 14px; 
-    text-decoration: none;
-    font-style: normal;
-    text-align: center;
-
-    background-color: #F1F1F1;
-    width: 100%;
-    height: 30%;
-    border-radius: 60px;
-    transition: all 0.3s ease-in-out;
-} */

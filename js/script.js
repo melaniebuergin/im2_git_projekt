@@ -27,7 +27,7 @@ async function loadShowDetails(title) {
     } 
 }
 
-// alles abrufen – in async Funktion einpacken!
+// alles abrufen – in async Funktion einpacken
 async function main() {
     for (const showTitle of showTitles) {
         const details = await loadShowDetails(showTitle);
