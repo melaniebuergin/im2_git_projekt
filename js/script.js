@@ -5,7 +5,6 @@ console.log(showTitles); // Zum Testen
 
 const all_showTitles_with_details = [];
 
-
 async function loadShowDetails(title) {
     const url = `https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(title)}`;
     try {
@@ -40,8 +39,6 @@ async function main() {
 }
 
 main(); // Funktion aufrufen
-
-
 
 // Initialisiere Punktestand und Fragezähler in localStorage
 let currentRound = parseInt(localStorage.getItem("quizRound")) || 1;
@@ -132,7 +129,6 @@ function loadRandomShow() {
                 };
             }
         });
-
         answersContainer.appendChild(btn);
     });
 }

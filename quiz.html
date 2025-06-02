@@ -1,41 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
-    <title>Quiz</title>
-</head>
-<body>
-    <main>
-
-         <script type="module" src="js/script.js">
-        </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->
-        
-        <section class="titlemobile">
-            <h1>Guess the show</h1>
-            <section class = taglist>
-                    <div class="tag">
-                        <p class="tag1">tag1</p>
-                    </div>
-                    <div class="tag">
-                        <p class="tag2">tag2</p>
-                    </div>
-                    <div class="tag">
-                        <p class="tag3">tag3</p>
-                    </div>
-            </section>
-        </section>   
-        
-         
-        <div class="img-container">
-            <img class="sharp-edges" id="show-image" src="" alt="show image">
-        </div>
-        
-        <section class="right">
-            <section class="titledesktop">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
+        <title>Quiz</title>
+    </head>
+    <body>
+        <main>
+            <script type="module" src="js/script.js">
+            </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->
+            
+            <section class="titlemobile">
                 <h1>Guess the show</h1>
-                <section class = taglistdesktop>
+                <section class = taglist>
                         <div class="tag">
                             <p class="tag1">tag1</p>
                         </div>
@@ -46,28 +24,45 @@
                             <p class="tag3">tag3</p>
                         </div>
                 </section>
+            </section>        
+            
+            <div class="img-container">
+                <img class="sharp-edges" id="show-image" src="" alt="show image">
+            </div>
+            
+            <section class="right">
+                <section class="titledesktop">
+                    <h1>Guess the show</h1>
+                    <section class = taglistdesktop>
+                            <div class="tag">
+                                <p class="tag1">tag1</p>
+                            </div>
+                            <div class="tag">
+                                <p class="tag2">tag2</p>
+                            </div>
+                            <div class="tag">
+                                <p class="tag3">tag3</p>
+                            </div>
+                    </section>
+                </section> 
+            
+                <section class="description" id="genres">
+                    <p>Genre: Drama | Action | Crime</p>
+                </section>
+
+                <section class = "interactionlist" id="answer-buttons">
+                    <!-- Buttons werden per Java Script eingefügt-->
+                </section>
+
+                <!-- Desktop-Button -->
+                <a id="continue-button" class="buttonStandard hide" >Continue</a>
             </section> 
-           
-            <section class="description" id="genres">
-                <p>Genre: Drama | Action | Crime</p>
-            </section>
 
-            <section class = "interactionlist" id="answer-buttons">
-                <!-- Buttons werden per Java Script eingefügt-->
-            </section>
-
-            <!-- Desktop-Button -->
-            <a id="continue-button" class="buttonStandard hide" >Continue</a>
-
-        </section> 
-
-        <!-- Mobile-Overlay -->
-        <div id="mobile-overlay" class="mobile-overlay hide">
-            <div class="circle"></div>
-            <p>Tap to continue</p>
-        </div>
-    </main>
-</body>
-
-
+            <!-- Mobile-Overlay -->
+            <div id="mobile-overlay" class="mobile-overlay hide">
+                <div class="circle"></div>
+                <p>Tap to continue</p>
+            </div>
+        </main>
+    </body>
 </html>

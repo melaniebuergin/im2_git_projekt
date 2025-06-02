@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -26,28 +27,20 @@ main{
 
 /* Schrift Style Mobile */
 h1{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 700;
   font-size: 27px;
-  font-style: normal;
   text-transform: uppercase;
   text-align: center;
   color: var(--primary-color);
 }
 
 h2{
-    font-family: "Inter", sans-serif;
     font-weight: 400;
-    line-height: normal;
-    font-style: normal;
     font-size: 20px;
     color: var(--primary-color);
 }
 
 p{
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
@@ -55,17 +48,13 @@ p{
 }
 
 span{
-    font-family: "Inter", sans-serif;
     font-size: 27px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
     color: var(--primary-color);
 }
 
 /* Button Mobile*/
  a.buttonStandard {
-    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 1em;
     text-align: center;  
@@ -79,13 +68,21 @@ span{
 } 
 
 /* ------- Style Mobile Container Home Page ------- */
-.PageContainer{
-    height: 100vh;
+.pageContainer{
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.pageContainer h1{
+    margin-bottom: 5%;
+}
+
+.pageContainer p{
+    margin-bottom: 5%;
 }
 
 /* ------- Style Mobile Container Quiz Page ------- */
@@ -109,16 +106,6 @@ section.titledesktop{
     margin: 5px;
 }
 
-img-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 45vh;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
 .img-container img{
     width: 100%;
     height:45vh;
@@ -136,8 +123,8 @@ img-container{
 
 /* Das Bild darüber zeigt nur die Ränder */
 img.sharp-edges {
-  mask-image: radial-gradient(circle, transparent 55%, black 100%);
   -webkit-mask-image: radial-gradient(circle, transparent 0%, black 0%);
+  mask-image: radial-gradient(circle, transparent 0%, black 0%);
   pointer-events: none;
 }
 
@@ -146,20 +133,18 @@ img.sharp-edges {
     flex-direction: row;
     justify-content: left;
     color: var(--primary-color);
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
 }
 
 .interactionlist{
-    display: flex;
     height: 25vh;
-    flex-direction: column;
-    align-items: center;
     margin-top: 2%;
     margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -168,15 +153,12 @@ img.sharp-edges {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: var(--secondary-color);;
+    color: var(--secondary-color);
     font-weight: 700;
     font-size: 14px; 
     text-decoration: none;
-    font-style: normal;
     text-align: center;
-
     background-color: var(--primary-color);
     border:0px;
     width: 100%;
@@ -190,14 +172,10 @@ img.sharp-edges {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 700;
     font-size: 14px; 
     text-decoration: none;
-    font-style: normal;
     text-align: center;
-    
     background-color: var(--accent-color); /* Grün */
     color: var(--primary-color);
     width: 100%;
@@ -209,17 +187,12 @@ img.sharp-edges {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 700;
     font-size: 14px; 
     text-decoration: none;
-    font-style: normal;
-    text-align: center;
-    
+    text-align: center;  
     background-color: var(--error-color); /* Rot */
     color:var(--primary-color);
-
     width: 100%;
     height: 30%;
     border-radius: 60px;
@@ -229,24 +202,18 @@ img.sharp-edges {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 700;
     font-size: 14px; 
     text-decoration: none;
-    font-style: normal;
     text-align: center;
-
     background-color: var(--disabled-color); /* Grau */
     color: var(--secondary-color);;
     pointer-events: none;
     opacity: 0.7;
-
     width: 100%;
     height: 30%;
     border-radius: 60px;
 }
-
 
 /* Mobile Overlay */
 .hide {
@@ -333,12 +300,8 @@ circle {
     left: 45%;
     transform: translate(-50%, -50%);
     color: var(--accent-color);
-
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 700;
     text-transform: uppercase;
-    font-style: normal;
     text-align: center;
     font-size: 50px;
 }
@@ -372,8 +335,6 @@ section.resulttext h1{
     margin-bottom: 5%;
 }
 
-
-
 /* Media Querys - Diese CSS-Regeln gelten nur auf Desktops */
 @media screen and (min-width: 900px) {
 
@@ -395,6 +356,14 @@ section.resulttext h1{
         align-items: center;
         justify-content: center;
     }
+    .pageContainer h1{
+    margin-bottom: 5%;
+    font-size: 4em;
+    }
+
+    .pageContainer p{
+    margin-bottom: 5%;
+    }
 
     /* ------ Desktop Quiz ------- */
     section.titlemobile{
@@ -413,7 +382,6 @@ section.resulttext h1{
     }
 
     .img-container{
-        /* background-color: #26B439; */
         width: 45%;
         height: 100vh;
         display: flex;
@@ -486,4 +454,3 @@ section.resulttext h1{
         width: 50%;
     }
 }
-

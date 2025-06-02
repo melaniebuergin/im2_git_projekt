@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
-    <title>Punkte</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"> <!-- Link zur CSS-Datei -->
+        <title>Punkte</title>
+    </head>
 
-<body>
-    <script type="module" src="js/points.js">
-    </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->
-        
-    <main class="points">
-        <h1 id="points-heading"></h1>
-           <div class="circle-container">
-                <svg width="200" height="200">
-                    <circle class="progress" cx="100" cy="100" r="90" />
-                </svg>
-                <div class="number" id="number">+0</div>
-            </div>
-        <p class="current-score">Your current score: </p>
-        <a href="score.html" class="buttonStandard">Next Quiz</a>
-    </main>
-</body>
+    <body>
+        <script type="module" src="js/points.js">
+        </script> <!-- immer module verwenden - funktioniert "alles", Script im Body = wird erst ausgeführt, wenn das HTML geladen wird. Im Head müsste immer ein Befehl gegeben werden, dass es erst dann geladen werden soll -->    
+        <main class="points">
+            <h1 id="points-heading"></h1>
+            <div class="circle-container">
+                    <svg width="200" height="200">
+                        <circle class="progress" cx="100" cy="100" r="90" />
+                    </svg>
+                    <div class="number" id="number">+0</div>
+                </div>
+            <p class="current-score">Your current score: </p>
+            <a href="score.html" class="buttonStandard">Next Quiz</a>
+        </main>
+    </body>
 </html>
