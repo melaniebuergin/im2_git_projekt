@@ -428,12 +428,12 @@ section.resulttext h1{
     }
 
     .quiz-button:hover{
-        background-color: rgb(207, 207, 207);
+        background-color: rgb(163, 161, 161);
         cursor: pointer;
     }
 
     a.buttonStandard:hover{
-        background-color: rgb(207, 207, 207);
+        background-color: rgb(163, 161, 161);
         cursor: pointer;
     }
 
