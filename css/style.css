@@ -165,6 +165,7 @@ img.sharp-edges {
     height: 30%;
     border-radius: 60px;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 /* Quiz Standardfarben Button Zustände*/
@@ -438,6 +439,7 @@ section.resulttext h1{
         display: flex;
         align-items: center; 
         justify-content: center;
+        cursor: pointer;
     }
 
      /* ------ Desktop points ------  */
